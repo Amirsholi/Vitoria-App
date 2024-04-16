@@ -46,7 +46,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ currentUser }) => {
     axios
       .post("/api/register", data)
       .then(() => {
-        toast.success("Account created");
+        toast.success("Conta criada");
 
         signIn("credentials", {
           email: data.email,
@@ -56,7 +56,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ currentUser }) => {
           if (callback?.ok) {
             router.push("/cart");
             router.refresh();
-            toast.success("Logged In");
+            toast.success("Logado");
           }
 
           if (callback?.error) {
@@ -64,22 +64,22 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ currentUser }) => {
           }
         });
       })
-      .catch(() => toast.error("Something went wrong"))
+      .catch(() => toast.error("Algo deu errado"))
       .finally(() => {
         setIsLoading(false);
       });
   };
 
   if (currentUser) {
-    return <p className="text-center">Logged in. Redirecting...</p>;
+    return <p className="text-center">Login. Redirecionando...</p>;
   }
 
   return (
     <>
-      <Heading title="Sign up for E~Shop" />
+      <Heading title="Inscreva-se no Site" />
       <Button
         outline
-        label="Continue with Google"
+        label="Continue com Google"
         icon={AiOutlineGoogle}
         onClick={() => {
           signIn("google");
@@ -116,7 +116,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ currentUser }) => {
         onClick={handleSubmit(onSubmit)}
       />
       <p className="text-sm">
-        Already have an account?{" "}
+      já tem uma conta?{" "}
         <Link className="underline" href="/login">
           Log in
         </Link>

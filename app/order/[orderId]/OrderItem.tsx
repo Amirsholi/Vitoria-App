@@ -23,7 +23,6 @@ const OrderItem: React.FC<OrderItemProps> = ({ item }) => {
         </div>
         <div className="flex flex-col gap-1">
           <div>{truncateText(item.name)}</div>
-          <div>{item.selectedImg.color}</div>
         </div>
       </div>
       <div className="justify-self-center">{formatPrice(item.price)}</div>

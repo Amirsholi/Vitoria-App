@@ -59,15 +59,15 @@ const LoginForm: React.FC<LoginFormProps> = ({ currentUser }) => {
   };
 
   if (currentUser) {
-    return <p className="text-center">Logged in. Redirecting...</p>;
+    return <p className="text-center">Login. Redirecionando...</p>;
   }
 
   return (
     <>
-      <Heading title="Sign in to E~Shop" />
+      <Heading title="Faça login no Site" />
       <Button
         outline
-        label="Continue with Google"
+        label="Continue com Google"
         icon={AiOutlineGoogle}
         onClick={() => {
           signIn("google", { callbackUrl: "/"});
@@ -92,7 +92,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ currentUser }) => {
         type="password"
       />
       <Button
-        label={isLoading ? "Loading" : "Login"}
+        label={isLoading ? "Carregando..." : "Login"}
         onClick={handleSubmit(onSubmit)}
       />
       <p className="text-sm">
